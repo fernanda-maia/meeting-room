@@ -36,4 +36,5 @@ public class Room {
 
     @Column(name = "end_hour", nullable = false)
     private LocalTime endHour;
+
 }

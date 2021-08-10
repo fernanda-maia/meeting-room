@@ -28,25 +28,22 @@ public class RoomController {
     }
 
     @GetMapping(path = "/{id}",
-                produces = MediaType.APPLICATION_JSON_VALUE
-    )
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<RoomDTO> getById(@PathVariable Long id) {
         return ResponseEntity.ok()
                 .body(roomService.getById(id));
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
-                 produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public ResponseEntity<RoomDTO> scheduleRoom(@Valid @RequestBody RoomDTO roomDTO) {
+                 produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<RoomDTO> createRoom(@Valid @RequestBody RoomDTO roomDTO) {
         return ResponseEntity.ok()
                 .body(roomService.saveRoom(roomDTO));
     }
 
     @PutMapping(path = "/{id}",
                 consumes = MediaType.APPLICATION_JSON_VALUE,
-                produces = MediaType.APPLICATION_JSON_VALUE
-    )
+                produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<RoomDTO> updateById(@PathVariable Long id,
                                               @Valid @RequestBody RoomDTO roomDTO) {
         return ResponseEntity.ok()

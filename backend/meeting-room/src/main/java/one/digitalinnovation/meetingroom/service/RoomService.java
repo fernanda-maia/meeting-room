@@ -78,6 +78,11 @@ public class RoomService {
     }
 
     private void verifySchedule(Room room) {
+        if(room.getStartHour().isAfter(room.getEndHour())) {
+            throw new BusinessException(ErrorMessageUtil.INVALID_TIME,
+                    HttpStatus.CONFLICT);
+        }
+
         Optional<List<Room>> roomSchedule = roomRepository
                 .findByNameAndDate(room.getName(), room.getDate());
 
@@ -86,11 +91,15 @@ public class RoomService {
 
                 LocalTime startTime = r.getStartHour();
                 LocalTime endTime = r.getEndHour();
+
                 boolean isOccupied = startTime.equals(room.getStartHour()) || endTime.equals(room.getEndHour());
 
                 if(!isOccupied) {
                     isOccupied = startTime.isAfter(room.getStartHour()) && startTime.isBefore(room.getEndHour())
-                            || endTime.isAfter(room.getStartHour()) && endTime.isBefore(room.getEndHour());
+                            || endTime.isAfter(room.getStartHour()) && endTime.isBefore(room.getEndHour())
+                            || room.getStartHour().isAfter(startTime) && room.getEndHour().isBefore(endTime)
+                            || room.getEndHour().isAfter(startTime) && room.getEndHour().isBefore(endTime);
+
                 }
 
                 return isOccupied && !r.getId().equals(room.getId());
