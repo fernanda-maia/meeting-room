@@ -1,0 +1,84 @@
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 0 0 3rem 0.3rem;
+}
+
+.section-title h2 {
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: rgb(104, 104, 104);
+    font-size: 2.9rem;
+    font-weight: 300;
+}
+
+.logo {
+    width: 4rem;
+}
+
+.room-list {
+    width: 75vw;
+    min-width: fit-content;
+    -webkit-box-shadow: 1px -1px 48px 0px rgba(0,0,0,0.21); 
+    box-shadow: 1px -1px 48px 0px rgba(0,0,0,0.21);
+}
+
+.mat-header-cell {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: rgb(52, 53, 109);
+}
+
+.mat-cell {
+    padding: 1.5rem 0;
+    font-size: 1rem;
+    color: #000;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #eeeeee;
+
+}
+
+.actions-td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.actions-td .mat-icon {
+    color: rgba(0, 0, 0, 0.452);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.actions-td .mat-icon:hover {
+    color: rgba(0, 0, 0, 0.678);
+}
+
+@media only screen and (max-width: 720px) {
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .room-list {
+        width: 90vw;
+    }
+
+    .mat-cell {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .display-mb-none{
+        display: none;
+    }
+}
