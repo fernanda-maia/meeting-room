@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 10rem;
+}
+
+.outline {
+    margin: 0 1rem;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #ffa56a;
+    color: transparent;
+}
+
+.description {
+    color: #707070;
+    font-size: 1.5rem;
+}
+
+.back-btn {
+    margin-top: 1.7rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    color: #707070;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: solid 5px #ffa66a9c;
+}
+
+
+.back-btn:hover {
+    color: #303030;
+    outline-color: #ff9047;
+}
+
+@media only screen and (max-width: 720px) {
+    .title {
+        font-size: 7rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+    }
+}

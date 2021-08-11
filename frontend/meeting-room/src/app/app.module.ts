@@ -13,6 +13,9 @@ import { RoomCreateComponent } from './room/room-create/room-create.component';
 import { RoomDetailsComponent } from './room/room-details/room-details.component';
 import { NavbarComponent } from './shared/components/layout/navbar/navbar.component';
 import { MainComponent } from './shared/components/layout/main/main.component';
+import { HomeScreenComponent } from './views/home-screen/home-screen.component';
+import { NotFoundScreenComponent } from './views/not-found-screen/not-found-screen.component';
+import { ContactScreenComponent } from './views/contact-screen/contact-screen.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { MainComponent } from './shared/components/layout/main/main.component';
     RoomUpdateComponent,
     RoomCreateComponent,
     NavbarComponent,
-    MainComponent
+    MainComponent,
+    HomeScreenComponent,
+    NotFoundScreenComponent,
+    ContactScreenComponent
   ],
   imports: [
     BrowserModule,

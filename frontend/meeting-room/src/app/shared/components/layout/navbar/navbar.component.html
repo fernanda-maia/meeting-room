@@ -9,11 +9,17 @@
         </mat-toolbar>
         
         <mat-nav-list (click)="closeSidenav()">
-            <a class="btn-menu" mat-list-item  href="#">Home</a>
+            <a class="btn-menu" mat-list-item  [routerLink]="['/']">Home</a>
             <mat-divider></mat-divider>
             
-            <a class="btn-menu" mat-list-item  href="#">Schedule a Room</a>
+            <a class="btn-menu" mat-list-item  [routerLink]="['/rooms']">Room List</a>
             <mat-divider></mat-divider>
+
+            <a class="btn-menu" mat-list-item  [routerLink]="['/rooms/schedule']">Schedule a Room</a>
+            <mat-divider></mat-divider>
+
+            <a class="btn-menu" mat-list-item  [routerLink]="['/contact']">Contact Us</a>
+
         </mat-nav-list>
         
     </mat-sidenav>
