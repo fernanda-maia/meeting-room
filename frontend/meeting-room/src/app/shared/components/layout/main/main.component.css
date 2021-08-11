@@ -1,0 +1,5 @@
+.app-content {
+    min-height: calc(100vh - 70px);
+    padding: 1rem;
+    background-color: var(--main-bg-color);
+}

@@ -1,0 +1,42 @@
+<mat-sidenav-container (backdropClick)="closeSidenav()">
+
+    
+    <!--START Sidebar-->
+    <mat-sidenav #sidenav fixedInViewport="true" >
+        <mat-toolbar class="sidenav-toolbar">
+            <img class="logo" src="assets/img/logo.png" alt="Logo">
+            Menu
+        </mat-toolbar>
+        
+        <mat-nav-list (click)="closeSidenav()">
+            <a class="btn-menu" mat-list-item  href="#">Home</a>
+            <mat-divider></mat-divider>
+            
+            <a class="btn-menu" mat-list-item  href="#">Schedule a Room</a>
+            <mat-divider></mat-divider>
+        </mat-nav-list>
+        
+    </mat-sidenav>
+    <!--END Sidebar-->
+    
+    <mat-sidenav-content>
+  
+        <!--START Toolbar-->
+        <mat-toolbar> 
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="openSidenav()">
+                <mat-icon aria-label="Side nav toggle icon">sort</mat-icon>
+            </button>
+                
+            <img class="logo" src="assets/img/logo.png" alt="Logo">
+            
+        </mat-toolbar>
+        <!--END Toolbar-->
+
+        <app-main></app-main>
+    
+    </mat-sidenav-content>
+  
+</mat-sidenav-container>
+
+  
+  

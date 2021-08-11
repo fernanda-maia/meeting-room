@@ -1,0 +1,59 @@
+.mat-toolbar {
+    padding: 0.9rem 0.6rem;
+    justify-content: space-between;
+    height: fit-content;
+    position: relative;
+    -webkit-box-shadow: -1px 11px 28px -11px rgba(0,0,0,0.45); 
+    box-shadow: -1px 11px 28px -11px rgba(0,0,0,0.45);
+    background-image: linear-gradient(200deg, #031531 0%, #030d1d 84%);
+    
+}
+
+.mat-icon {
+    font-size: 1.9rem;
+    margin-left: -2px;
+}
+
+.logo {
+    margin-right: 1rem;
+    width: 2.5rem;
+
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.027);
+    border-radius: 50% 50% 56% 44% / 48% 35% 65% 52% ;
+    margin-left: 0.5rem;
+}
+
+.mat-sidenav {
+    background-color: var(--primary-bg-color);
+    padding: 1rem;
+    width: 20rem;
+    min-width: fit-content;
+}
+
+.sidenav-toolbar {
+    background-color: transparent;
+    background-image: none;
+    font-weight: 600;
+    border-radius: 0.2rem;
+    margin-bottom: 0.5rem;
+    justify-content: start;
+    text-transform: uppercase;
+}
+
+.btn-menu {
+    letter-spacing: 1px;
+    font-family: 'Encode Sans', sans-serif;
+    color: var(--primary-font-color);
+}
+
+.btn-menu:hover {
+    background-color: var(--hover-bg-color);
+}
