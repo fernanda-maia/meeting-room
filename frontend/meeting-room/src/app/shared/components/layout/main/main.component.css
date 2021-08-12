@@ -1,9 +1,10 @@
 .app-content {
     overflow-x: hidden;
     display: flex;
-    color: #303030;
     justify-content: center;
     min-height: calc(100vh - 70px);
     padding: 5rem 1rem 3rem 1rem;
     background-color: var(--main-bg-color);
+    background: rgb(217,217,217);
+    background: linear-gradient(345deg, #d9d9d9 44.3%, rgb(44, 78, 117) 44.5%); 
 }

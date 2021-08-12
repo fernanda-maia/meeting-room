@@ -1,8 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     align-items: center;
-    gap: 1rem;
     text-align: center;
 }
 
@@ -13,30 +13,15 @@
 .outline {
     margin: 0 1rem;
     -webkit-text-stroke-width: 5px;
-    -webkit-text-stroke-color: #ffa56a;
+    -webkit-text-stroke-color: #ffbb8e;
     color: transparent;
 }
 
 .description {
-    color: #707070;
+    color: #a1a1a1;
     font-size: 1.5rem;
 }
 
-.back-btn {
-    margin-top: 1.7rem;
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-    color: #707070;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    outline: solid 5px #ffa66a9c;
-}
-
-
-.back-btn:hover {
-    color: #303030;
-    outline-color: #ff9047;
-}
 
 @media only screen and (max-width: 720px) {
     .title {
@@ -45,5 +30,15 @@
 
     .description {
         font-size: 1.2rem;
+    }
+
+    .img-404 {
+        width: 80vw;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        flex-direction: row;
     }
 }
