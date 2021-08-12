@@ -1,0 +1,59 @@
+.section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 0 3rem 0.3rem;
+}
+
+.section-title h2 {
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: rgb(238, 238, 238);
+    text-shadow: -1px -1px 7px rgba(41, 41, 41, 0.82);
+    font-size: 2.9rem;
+    font-weight: 300;
+}
+
+.section-title h3 {
+    font-weight: 200;
+    font-size: 1.7rem;
+}
+
+.logo {
+    width: 7rem;
+}
+
+.container {
+    width: 85vw;
+    margin-top: 4.7rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 25rem));
+    justify-content: center;
+    gap: 2rem;
+}
+
+.home-card {
+    cursor: pointer;
+    padding: 1.7rem;
+    background-color: var(--main-bg-color);
+    box-shadow: var(--box-shadow);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: #5c5c5c;
+    font-size: 1.1rem;
+    overflow: hidden;
+    transition: 0.5s;
+    border-radius: 5px;
+    border-left: solid 7px #0e1c6988;
+}
+
+.home-card:hover {
+    border-left-color: #0e1c69;
+}
+
+ .mat-icon {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
