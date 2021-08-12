@@ -1,27 +1,40 @@
-# MeetingRoom
+# Meeting Room Manager (Frontend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
+Frontend para uma aplicação de gerenciamento de salas de reunião. Esse projeto foi desenvolvido com os experts da [Digital Innovation One](https://digitalinnovation.one/).
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+&nbsp;
+## Tecnologias
 
-## Code scaffolding
+* [Angular 12](https://angular.io/docs)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+&nbsp;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Como rodar o frontend
+1. Caminhe até a pasta *meeting-room*:
+```sh
+cd frontend/meeting-room
+```
+2. Faça a instalação das dependências:
+```sh
+npm install
+```
+3. Inicie a aplicação:
+```sh
+ng serve
+```
+4. No navegador, acesse:
+```sh
+http://localhost:4200/
+```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+&nbsp;
+## Créditos
+* [Digital Innovation One](https://digitalinnovation.one/)
+* [Roundicons](https://www.flaticon.com/authors/roundicons) - Logo & Favicon
+* [Pixel True Studio](https://pixeltruedesigns.gumroad.com/?recommended_by=library) - Contact Profile Image
+* [Icons8](https://icons8.com/) - Contact Skills Icons
+* [Pixel Perfect](https://www.flaticon.com/authors/pixel-perfect) - Contact Social Media Icons
+* [Freepik](https://br.freepik.com/home) - 404 Image

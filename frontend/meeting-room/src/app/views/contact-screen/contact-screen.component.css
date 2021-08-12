@@ -1,5 +1,5 @@
 h2 {
-    font-weight: 300;
+    font-weight: 200;
     font-size: 4rem;
 }
 
@@ -90,6 +90,7 @@ h3 {
 }
 
 .contact-info p {
+    font-weight: 200;
     font-size: 1.5rem;
 }
 

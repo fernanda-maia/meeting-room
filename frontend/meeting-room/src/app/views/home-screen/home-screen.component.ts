@@ -15,8 +15,12 @@ export class HomeScreenComponent implements OnInit {
 
   }
 
-  public navigateTo(url: string) {
-    this.router.navigateByUrl(url);
+  public navigateTo(path: string) {
+    this.router.navigateByUrl(path);
+  }
+
+  public redirect(url: string) {
+    window.open(url);
   }
 
 }
