@@ -3,8 +3,24 @@
     --menu-theme-color: #36385e;
     --primary-bg-color: #000000;
     --primary-font-color: #cccccc;
+    --hover-bg-color: #8bb7fa63;
 
     --main-bg-color: #ececec;
-    --hover-bg-color: #8bb7fa63;
     --box-shadow: 1px -1px 48px 0px rgba(0,0,0,0.21);
+}
+
+
+.card-bg {
+    background: #d9d9d9;
+    background: linear-gradient(246deg, #d9d9d9 38%, #0e1c6988 38%); 
+}
+
+
+.section-title-h2 {
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: rgb(238, 238, 238);
+    text-shadow: -1px -1px 7px rgba(41, 41, 41, 0.82);
+    font-size: 2.9rem;
+    font-weight: 300;
 }

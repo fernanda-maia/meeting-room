@@ -1,22 +1,19 @@
 .wrapper {
-    width: 100%;
-    display: flex;
-    padding: 1rem;
+    border-radius: 10px;
+    min-height: 50vh;
+    box-shadow: var(--box-shadow);
+    width: 90vw;
+    padding: 3rem 1rem;
 }
 
 .section-title {
-    flex-basis: 45%;
+    flex-basis: 40%;
     text-align: center;
     line-height: 1.7;
 }
 
-.section-title h2 {
-    letter-spacing: 2px;
-    word-spacing: 5px;
-    color: rgb(238, 238, 238);
-    text-shadow: -1px -1px 7px rgba(41, 41, 41, 0.82);
+.section-title-h2 {
     font-size: calc(2rem + 2vw);
-    font-weight: 300;
 }
 
 .section-title h3 {
@@ -25,12 +22,12 @@
 }
 
 .logo {
-    width: 7rem;
+    width: calc(3vw + 7rem);
 }
 
 .container {
     flex-grow: 1;
-    width: 85vw;
+    width: 60%;
     margin-top: 4.7rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 23rem));
@@ -56,6 +53,7 @@
 
 .home-card:hover {
     border-left-color: #b30095;
+    transform: translateX(10px);
 }
 
  .mat-icon {
@@ -65,7 +63,20 @@
 
 @media only screen and (max-width: 1024px) {
     .wrapper {
+        background: none;
+        box-shadow: none;
+        padding: 1rem;
         flex-direction: column;
     }
 
+    .container, .section-title {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 1900px) {
+    .wrapper {
+        width: 80vw;
+    }
 }

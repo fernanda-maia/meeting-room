@@ -5,5 +5,19 @@ import { Injectable } from '@angular/core';
 })
 export class RoomService {
 
-  constructor() { }
+  constructor() { 
+
+  }
+
+  getRooms() {
+    alert("Get Room Works!");
+  }
+
+  getRoomById(id: number) {
+    alert("Get Room" + id + "Works!");
+  }
+
+  deleteRoom(id: number) {
+    alert("Delete" + id + "Room Works!");
+  }
 }

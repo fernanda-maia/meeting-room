@@ -1,6 +1,6 @@
 <div class="section-title">
     <img class="logo" src="assets/img/list.png" alt="Logo">
-    <h2>List Room</h2>
+    <h2 class="section-title-h2">List Room</h2>
 </div>
 
 <table mat-table [dataSource]="source" matSort class="room-list">
@@ -32,10 +32,10 @@
     <!-- Actions Column -->
     <ng-container matColumnDef="actions">
       <th class="display-mb-none" mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let data" class="actions-td display-mb-none">
-          <mat-icon>visibility</mat-icon>
-          <mat-icon>edit</mat-icon>
-          <mat-icon>delete_outline</mat-icon>
+      <td mat-cell *matCellDef="let data" class="actions-td center-flex display-mb-none">
+          <mat-icon (click)="data.actions.view(data.id)" >visibility</mat-icon>
+          <mat-icon (click)="data.actions.edit(data.id)">edit</mat-icon>
+          <mat-icon (click)="data.actions.delete(data.id)">delete_outline</mat-icon>
         </td>
     </ng-container>
 

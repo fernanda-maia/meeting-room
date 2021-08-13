@@ -8,3 +8,15 @@ body {
     font-size: 16px;
     overflow-x: hidden;
 }
+
+.center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 720px) {
+    .display-mb-none{
+        display: none;
+    }
+}
