@@ -1,24 +1,12 @@
-h2 {
+.contact-title h2 {
     font-weight: 200;
     font-size: 4rem;
 }
 
-h3 {
+.contact-title h3 {
     font-weight: 100;
     letter-spacing: 2px;
     font-size: 2rem;
-}
-
-.section-title {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    margin: 0 0 3rem 0.3rem;
-}
-
-.logo {
-    width: 4rem;
 }
 
 .contact-card {
@@ -87,17 +75,12 @@ h3 {
 }
 
 @media only screen and (max-width: 864px) {
-    h2 {
+    .contact-title h2 {
         font-size: 2.2rem;
     }
 
-    h3 {
+    .contact-title h3 {
         font-size: 1.3rem;
-    }
-
-
-    .section-title-h2 {
-        font-size: 2.5rem;
     }
 
     .contact-card {

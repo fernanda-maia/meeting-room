@@ -1,35 +1,36 @@
-<div class="section-title">
+<div class="title-display">
     <img class="logo" src="assets/img/list.png" alt="Logo">
     <h2 class="section-title-h2">List Room</h2>
 </div>
 
+<!--START Room List Table-->
 <table mat-table [dataSource]="source" matSort class="room-list">
 
-    <!-- Name Column -->
+    <!-- NAME Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
       <td mat-cell *matCellDef="let data">{{data.name}}</td>
     </ng-container>
   
-    <!-- Date Column -->
+    <!--DATE Column-->
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
       <td mat-cell *matCellDef="let data">{{data.date}}</td>
     </ng-container>
   
-    <!-- Start Column -->
+    <!--START HOUR Column-->
     <ng-container matColumnDef="start">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Hour </th>
       <td mat-cell *matCellDef="let data">{{data.start}}</td>
     </ng-container>
   
-    <!-- End Column -->
+    <!--END HOUR Column-->
     <ng-container matColumnDef="end">
       <th class="display-mb-none" mat-header-cell *matHeaderCellDef mat-sort-header> End HOur </th>
       <td class="display-mb-none" mat-cell *matCellDef="let data">{{data.end}}</td>
     </ng-container>
 
-    <!-- Actions Column -->
+    <!--START ACTIONS Column-->
     <ng-container matColumnDef="actions">
       <th class="display-mb-none" mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let data" class="actions-td center-flex display-mb-none">
@@ -38,8 +39,10 @@
           <mat-icon (click)="data.actions.delete(data.id)">delete_outline</mat-icon>
         </td>
     </ng-container>
+    <!--END ACTIONS Column-->
 
     <tr mat-header-row *matHeaderRowDef="columns"></tr>
     <tr mat-row *matRowDef="let row; columns: columns;"></tr>
 </table>
+<!--END Room List Table-->
   

@@ -1,0 +1,47 @@
+.form {
+    background: rgb(14,28,105);
+    background: linear-gradient(246deg,  rgba(217,217,217,1) 30%, rgb(19, 46, 77) 30%); 
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 10px;
+    flex-direction: column;
+    box-shadow: var(--box-shadow);
+}
+
+
+.form-actions {
+    width: 100%;
+    gap: 1rem;
+}
+
+.form-btn-action {
+    width: 9rem;
+    background-color: #217fb6;
+    outline: solid 3px transparent;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+}
+
+.form-btn-action:last-of-type {
+    background-color: transparent;
+    outline-color: #217fb6;
+    color: #217fb6;
+}
+
+.form-btn-action:hover {
+    color: #fff;
+    outline-color: var(--hover-bg-color);
+    background-color: var(--hover-bg-color);
+}
+
+@media only screen and (max-width: 864px) {    
+    .form-actions {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-btn-action {
+        width: 100%;
+    }
+}

@@ -9,7 +9,6 @@ import { Room } from 'src/app/shared/models/room';
 import { RoomService } from 'src/app/core/room.service';
 
 
-
 @Component({
   selector: 'app-room-list',
   templateUrl: './room-list.component.html',
