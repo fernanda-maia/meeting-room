@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 
 import { RoomModule } from './room/room.module';
 import { ViewsModule } from './shared/views/views.module';
@@ -32,9 +33,22 @@ import { AlertComponent } from './shared/components/alert/alert.component';
     MaterialModule,
     HttpClientModule,
     AppRoutingModule,
+    MatMomentDateModule,
     BrowserAnimationsModule
   ],
   providers: [
+    {
+      provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+      useValue: { useUtc: true }
+    },
+    {
+      provide: MAT_DATE_FORMATS,
+      useValue: {
+        display: {
+          dateInput: 'YYYY-MM-DD',
+        }
+      }
+    },
     {
       provide: MAT_DATE_LOCALE,
       useValue: "pt-BR"

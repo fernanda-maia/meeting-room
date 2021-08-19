@@ -3,12 +3,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { RoomService } from 'src/app/core/room.service';
-import { FieldValidatorService } from 'src/app/shared/components/fields/fields-validator.service';
 import { Room } from 'src/app/shared/models/room';
 import { Alert } from 'src/app/shared/models/alert';
-import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
+import { RoomService } from 'src/app/core/room.service';
 import { ErrorResponse } from 'src/app/shared/models/error-response';
+import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
+import { FieldValidatorService } from 'src/app/shared/components/fields/fields-validator.service';
 
 
 @Component({
@@ -39,7 +39,9 @@ export class RoomCreateComponent implements OnInit {
       this.roomService
           .getRoomById(this.id).subscribe((room: Room) => {
               this.createForm(room);
-          });
+          },
+            (_) => this.router.navigateByUrl('/rooms/schedule')
+          );
     }
   }
 
@@ -69,7 +71,6 @@ export class RoomCreateComponent implements OnInit {
 
 
   public createForm(room?: Room): void {
-
     this.schedule = this.formBuilder.group({
       room: [room?.room || "", [
           Validators.required,
@@ -84,9 +85,10 @@ export class RoomCreateComponent implements OnInit {
       ],
 
       date: [room?.date || new Date(), [Validators.required]],
-      startHour: [room?.startHour || "00:00", [Validators.required]],
-      endHour: [room?.endHour || "00:00", [Validators.required]]
+      startHour: [room?.startHour || "00:00:00", [Validators.required]],
+      endHour: [room?.endHour || "00:00:00", [Validators.required]]
     })
+
   }
 
   private saveRoom(room: Room) {
@@ -153,16 +155,17 @@ export class RoomCreateComponent implements OnInit {
   private formatDatas(): Room {
       let room = this.schedule.getRawValue();
 
-      room.date = room.date.toLocaleString('pt-BR', {
+      let date = new Date(Date.parse(room.date));
+      date.setTime(date.getTime() + date.getTimezoneOffset()*60*1000 );
+
+      room.date = date.toLocaleString('pt-BR', {
         year: "numeric",
         month: "2-digit",
         day: "2-digit"
       });
 
       if(room.date.includes('/')) {
-        console.log(room.date)
         room.date = room.date.split('/').reverse().join('-');
-        console.log(room.date)
       }
 
       if(room.startHour.length < 8) {

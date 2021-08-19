@@ -48,7 +48,6 @@ export class RoomListComponent implements AfterViewInit, OnInit {
     
     ngOnInit(): void {
       this.getData();
-      console.log(this.room_data);
 
       this.source = new MatTableDataSource(this.room_data);
     }

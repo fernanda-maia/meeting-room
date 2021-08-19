@@ -39,9 +39,9 @@ http://localhost:8080/api/swagger-ui.html
   "id": 1,
   "room": "Room 03",
   "name": "John John Florence",
-  "date": "10/10/2021",
-  "startHour": "21:30",
-  "endHour": "23:00"
+  "date": "2021-10-10",
+  "startHour": "21:30:00",
+  "endHour": "23:00:00"
 }
 ```
 
@@ -52,9 +52,9 @@ http://localhost:8080/api/swagger-ui.html
  *  **id**: Long
 * **room**: String
 * **name**: String
-* **date**: LocalDate ("dd/MM/yyyy")
-* **startHour**: LocalTime ("HH:mm")
-* **endHour**: LocalTime ("HH:mm")
+* **date**: LocalDate ("yyyy-MM-dd")
+* **startHour**: LocalTime ("HH:mm:ss")
+* **endHour**: LocalTime ("HH:mm:ss")
 
 
 &nbsp;
