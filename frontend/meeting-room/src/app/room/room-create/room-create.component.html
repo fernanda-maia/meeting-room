@@ -3,45 +3,54 @@
     <h2 class="section-title-h2">Schedule</h2>
 </div>
 
-<form class="form center-flex" novalidate
-      autocomplete="off"
-      [formGroup]="schedule"
-      (ngSubmit)="submit()"
-      (ngReset)="cancel()">
-         
-    <app-input-text type="text" 
-                    fieldName="Room" 
-                    [formGroup]="schedule" 
-                    controlName="name">
-    </app-input-text>
+<div class="container center-flex">
+        <form class="form center-flex" novalidate
+              autocomplete="off"
+              [formGroup]="schedule"
+              (ngSubmit)="sendData()"
+              (ngReset)="cancel()">
+                 
+            <app-input-text type="text" 
+                            fieldName="Room" 
+                            [formGroup]="schedule" 
+                            controlName="room">
+            </app-input-text>
 
-    <app-input-date fieldName="Date" 
-                    [formGroup]="schedule" 
-                    controlName="date">
-    </app-input-date>
-
-    <app-input-text type="time" 
-                    fieldName="Start Hour" 
-                    [formGroup]="schedule" 
-                    controlName="startHour">
-    </app-input-text>
-
-    <app-input-text type="time" 
-                    fieldName="End Hour" 
-                    [formGroup]="schedule" 
-                    controlName="endHour">
-    </app-input-text>
+            <app-input-text type="text" 
+                            fieldName="Name" 
+                            [formGroup]="schedule" 
+                            controlName="name">
+            </app-input-text>
     
-    <mat-card-actions class="form-actions center-flex">
-        <button mat-raised-button
-                type="submit" 
-                class="form-btn-action">Save
-        </button>
-
-        <button mat-raised-button 
-                class="form-btn-action" 
-                type="reset" 
-                (click)="cancel()">Cancel
-        </button>
-   </mat-card-actions>
-</form>
+            <app-input-date fieldName="Date" 
+                            [formGroup]="schedule" 
+                            controlName="date">
+            </app-input-date>
+    
+            <app-input-text type="time" 
+                            fieldName="Start Hour" 
+                            [formGroup]="schedule" 
+                            controlName="startHour">
+            </app-input-text>
+    
+            <app-input-text type="time" 
+                            fieldName="End Hour" 
+                            [formGroup]="schedule" 
+                            controlName="endHour">
+            </app-input-text>
+            
+            <mat-card-actions class="form-actions center-flex">
+                <button mat-raised-button
+                        type="submit" 
+                        class="form-btn-action">Save
+                </button>
+        
+                <button mat-raised-button 
+                        class="form-btn-action" 
+                        (click)="cancel()"
+                        type="reset">Cancel
+                </button>
+           </mat-card-actions>
+        </form>
+        <img src="assets/img/register.png" alt="" class="schedule-img display-mb-none">
+</div>

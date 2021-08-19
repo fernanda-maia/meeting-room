@@ -1,0 +1,49 @@
+::ng-deep.mat-dialog-container {
+    background-color: #eeeeee;
+    box-shadow: var(--box-shadow);
+    color: #444444;
+}
+
+.alert-title, .alert-content {
+    white-space: pre-line;
+    margin-bottom: 0;
+}
+
+.alert-title {
+    text-align: center;
+}
+
+.alert-content {
+    font-size: 1rem;
+    margin-left: 0.3rem;
+}
+
+.alert-btn-box {
+    gap: 0.5rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.alert-btn  {
+    padding: 0.2rem;
+    margin-bottom: 0.9rem;
+    text-transform: capitalize;
+    color: #444444;
+    letter-spacing: 1px;
+    outline: solid 2px var(--menu-theme-color);
+    background-color: transparent;
+    border-radius: 0;
+    width: 50%;
+    transition: 0.3s;
+}
+
+.ok-btn {
+    color: #fff;
+    background-color: var(--menu-theme-color);
+}
+
+.cancel-btn:hover, .ok-btn:hover {
+    color: #fff;
+    background-color: #777aa5;
+    outline-color: #777aa5;
+}

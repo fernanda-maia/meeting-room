@@ -4,16 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RoomModule } from './room/room.module';
-import { FieldsModule } from './shared/components/fields/fields.module';
+import { ViewsModule } from './shared/views/views.module';
 import { AppRoutingModule } from './routes/app-routing.module';
+import { FieldsModule } from './shared/components/fields/fields.module';
 import { MaterialModule } from './shared/material/material.module';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './shared/components/layout/main/main.component';
-import { HomeScreenComponent } from './shared/views/home-screen/home-screen.component';
 import { NavbarComponent } from './shared/components/layout/navbar/navbar.component';
-import { ContactScreenComponent } from './shared/views/contact-screen/contact-screen.component';
-import { NotFoundScreenComponent } from './shared/views/not-found-screen/not-found-screen.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 
 
@@ -22,22 +22,22 @@ import { NotFoundScreenComponent } from './shared/views/not-found-screen/not-fou
     AppComponent,
     MainComponent,
     NavbarComponent,
-    HomeScreenComponent,
-    ContactScreenComponent,
-    NotFoundScreenComponent
+    AlertComponent
   ],
   imports: [
     RoomModule,
+    ViewsModule,
     FieldsModule,
     BrowserModule,
     MaterialModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
   providers: [
     {
       provide: MAT_DATE_LOCALE,
-      useValue: "pt"
+      useValue: "pt-BR"
     }
   ],
   bootstrap: [AppComponent]

@@ -1,3 +1,11 @@
+.container {
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.schedule-img {
+    width: calc(20rem + 5vw);
+}
 .form {
     background: rgb(14,28,105);
     background: linear-gradient(246deg,  rgba(217,217,217,1) 30%, rgb(19, 46, 77) 30%); 
@@ -43,5 +51,9 @@
 
     .form-btn-action {
         width: 100%;
+    }
+
+    .display-mb-none {
+        display: none;
     }
 }

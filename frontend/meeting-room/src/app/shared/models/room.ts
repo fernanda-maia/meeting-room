@@ -2,11 +2,12 @@ import { Time } from "@angular/common";
 
 
 export interface Room {
-    id: number;
+    id?: number;
+    room: string;
     name: string;
-    date: Date;
-    startHour: Time;
-    endHour: Time;
+    date: string;
+    startHour: string;
+    endHour: string;
     active: boolean;
     
 }

@@ -18,6 +18,15 @@
     color: #000;
 }
 
+td {
+    font-weight: 300;
+}
+
+.bold-cell {
+    color: #272727;
+    font-weight: 500;
+}
+
 tr:nth-child(odd) {
     background-color: #ffffff;
 }
@@ -28,7 +37,7 @@ tr:nth-child(even) {
 }
 
 .actions-td {
-    gap: 1.5rem;
+    justify-content: space-evenly;
 }
 
 .actions-td .mat-icon {

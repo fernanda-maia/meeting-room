@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
 
 import { Room } from 'src/app/shared/models/room';
 import { RoomService } from 'src/app/core/room.service';
+import { Alert } from 'src/app/shared/models/alert';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
 
 
 @Component({
@@ -15,44 +18,38 @@ import { RoomService } from 'src/app/core/room.service';
   styleUrls: ['./room-list.component.css']
 })
 export class RoomListComponent implements AfterViewInit, OnInit {
-    rooms: Observable<Room[]>;
     source: MatTableDataSource<any>;
 
     columns: string[] = [
+      "room",
       "name",
       "date",
-      "start",
-      "end",
+      "startHour",
+      "endHour",
       "actions"
     ];
 
     actions = {
-      
-      delete: (id: number) => this.deleteRoom(id), 
-      view: (id: number) => this.viewRoom(id), 
+      delete: (id: number, room: Room) => this.deleteRoom(id, room), 
       edit: (id: number) => this.editRoom(id)
 
     };
     
     @ViewChild(MatSort)
     sort: MatSort;
-    
-    
-    room_data = [
 
-      {id: 1,name: "Sala 01", date: "10/10/2021", start: "10:00:00", end: "12:00:00", actions: this.actions},
-      {id: 2,name: "Sala 02", date: "10/09/2021", start: "12:00:00", end: "19:00:00", actions: this.actions},
-      {id: 3,name: "Sala 02", date: "10/09/2021", start: "12:00:00", end: "19:00:00", actions: this.actions},
-      {id: 4,name: "Sala 02", date: "10/09/2021", start: "12:00:00", end: "19:00:00", actions: this.actions}
-    ]
+    room_data: Array<Object> = []
 
-    constructor(private roomService: RoomService,
+    constructor(public dialog: MatDialog,
+                private roomService: RoomService,
                 private router: Router) { 
     
     }
     
-    ngOnInit() {
-      this.reloadData();
+    ngOnInit(): void {
+      this.getData();
+      console.log(this.room_data);
+
       this.source = new MatTableDataSource(this.room_data);
     }
 
@@ -61,22 +58,51 @@ export class RoomListComponent implements AfterViewInit, OnInit {
     }
 
 
-    private reloadData() {
+    private getData() {
+      this.roomService.getRooms().subscribe(
+        (r: Room[]) => {
+            this.room_data.push(...r);
 
+            this.source = new MatTableDataSource(this.room_data);
+            this.source.sort = this.sort;
+
+        }
+      )
     }
 
 
     // START Actions functions
-    private viewRoom(id: number): void {
-      this.roomService.getRoomById(id);
-    }
-
     private editRoom(id: number): void {
       this.router.navigateByUrl(`/rooms/${id}`);
     }
 
-    private deleteRoom(id: number): void {
-      this.roomService.deleteRoom(id);
+    private deleteRoom(id: number, room: Room): void {
+      const description = `${room.room}
+      ${room.name}
+      ${room.date}
+      Start Hour: ${room.startHour}
+      End Hour: ${room.endHour}
+      `
+      const alert = {
+        data: {
+          title: `Warning!
+          Check the datas before delete`,
+          description
+
+        } as Alert
+      };
+
+      const dialogRef = this.dialog.open(AlertComponent, alert);
+      dialogRef.afterClosed().subscribe((opt: boolean) => {
+          if(opt) {
+            this.roomService.deleteRoom(id)
+                .subscribe(() => {
+                  this.room_data = [];
+                  this.getData();
+                });
+          }
+      })
+      
     }
     // END Actions functions
 
