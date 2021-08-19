@@ -16,7 +16,7 @@ public interface RoomMapper {
     RoomMapper INSTANCE = Mappers.getMapper(RoomMapper.class);
 
     @Mappings({
-            @Mapping(target = "date", source = "date", dateFormat = "dd-MM-yyyy"),
+            @Mapping(target = "date", source = "date", dateFormat = "yyyy-MM-dd"),
             @Mapping(target = "startHour", source = "startHour", dateFormat = "HH:mm:ss"),
             @Mapping(target = "endHour", source = "endHour", dateFormat = "HH:mm:ss")
     })

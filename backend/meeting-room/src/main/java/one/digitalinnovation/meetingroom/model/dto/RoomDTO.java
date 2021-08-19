@@ -17,6 +17,9 @@ public class RoomDTO {
     private Long id;
 
     @NotEmpty
+    private String room;
+
+    @NotEmpty
     private String name;
 
     @NotEmpty

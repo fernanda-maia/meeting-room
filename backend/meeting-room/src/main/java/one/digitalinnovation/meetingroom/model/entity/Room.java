@@ -25,6 +25,9 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "room", nullable = false)
+    private String room;
+
     @Column(name = "name", nullable = false)
     private String name;
 

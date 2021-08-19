@@ -34,6 +34,13 @@ public class RoomController {
                 .body(roomService.getById(id));
     }
 
+    @GetMapping(path = "/findByDate/{id}",
+                produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<RoomDTO>> getByName(@PathVariable Long id) {
+        return ResponseEntity.ok()
+                .body(roomService.getByRoomAndDate(id));
+    }
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
                  produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<RoomDTO> createRoom(@Valid @RequestBody RoomDTO roomDTO) {

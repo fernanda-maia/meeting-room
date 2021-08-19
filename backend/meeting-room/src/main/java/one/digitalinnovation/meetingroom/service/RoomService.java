@@ -40,6 +40,20 @@ public class RoomService {
         return roomMapper.toDTO(foundRoom);
     }
 
+    @Transactional(readOnly = true)
+    public List<RoomDTO> getByRoomAndDate(Long id) {
+        Room searchedRoom = verifyIfExists(id);
+
+        Optional<List<Room>> roomSearched = this.roomRepository
+                        .findByRoomAndDate(searchedRoom.getRoom(), searchedRoom.getDate());
+
+        if(roomSearched.isEmpty()) {
+            throw new NotFoundException(ErrorMessageUtil.ROOM_NOT_FOUND);
+        }
+
+        return roomMapper.toDTO(roomSearched.get());
+    }
+
     @Transactional
     public RoomDTO saveRoom(RoomDTO roomDTO) {
         Room roomToSave = roomMapper.toModel(roomDTO);
@@ -84,7 +98,7 @@ public class RoomService {
         }
 
         Optional<List<Room>> roomSchedule = roomRepository
-                .findByNameAndDate(room.getName(), room.getDate());
+                .findByRoomAndDate(room.getRoom(), room.getDate());
 
         if(roomSchedule.isPresent()) {
             boolean any = roomSchedule.get().stream().anyMatch(r -> {
@@ -112,4 +126,5 @@ public class RoomService {
             }
         }
     }
+
 }

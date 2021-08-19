@@ -37,10 +37,11 @@ http://localhost:8080/api/swagger-ui.html
 ```json
 {
   "id": 1,
-  "name": "Sala 01",
-  "date": "2021-10-10",
-  "startHour": "21:30:00",
-  "endHour": "23:00:00"
+  "room": "Room 03",
+  "name": "John John Florence",
+  "date": "10/10/2021",
+  "startHour": "21:30",
+  "endHour": "23:00"
 }
 ```
 
@@ -48,11 +49,12 @@ http://localhost:8080/api/swagger-ui.html
 
 &nbsp;
 1.1. Sendo os dados definidos da seguinte forma:
- *  **id**: Long 
+ *  **id**: Long
+* **room**: String
 * **name**: String
-* **date**: LocalDate ("dd-MM-yyyy")
-* **startHour**: LocalTime ("HH:mm:ss")
-* **endHour**: LocalTime ("HH:mm:ss)
+* **date**: LocalDate ("dd/MM/yyyy")
+* **startHour**: LocalTime ("HH:mm")
+* **endHour**: LocalTime ("HH:mm")
 
 
 &nbsp;
@@ -61,6 +63,7 @@ Método | Rota | Descrição
 -------|------ | -------  
 GET | api/rooms | Retorna um JSON com todos os registros
 GET | api/rooms/{id} | Retorna um JSON com o registro do id especificado na rota ou status 404 caso não encontre o registro
+GET | api/rooms/findByDate/{id} | Retorna um JSON com todos os registros que possuem os campos *room* e *date* iguais
 POST | api/rooms | Retorna o registro criado ou status 422 caso haja conflito de horário
 PUT | api/rooms/{id} | Retorna o registro editado ou status 422 caso haja conflito de horário
 DELETE | api/rooms/{id} | Retorna o registro deletado ou status 404 caso não encontre o registro

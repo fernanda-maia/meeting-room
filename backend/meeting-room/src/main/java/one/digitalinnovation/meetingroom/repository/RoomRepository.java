@@ -13,5 +13,5 @@ import java.util.Optional;
 @Repository
 public interface RoomRepository extends JpaRepository<Room, Long> {
 
-    Optional<List<Room>> findByNameAndDate(String name, LocalDate date);
+    Optional<List<Room>> findByRoomAndDate(String room, LocalDate date);
 }
